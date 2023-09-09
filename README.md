@@ -1,2 +1,2 @@
-# MLOps PZ#1
+# MLOps
 Practical tasks for the course
