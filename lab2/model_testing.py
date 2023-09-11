@@ -31,4 +31,4 @@ if __name__ == '__main__':
     MPAE_Score = mean_absolute_percentage_error(testY[0], testPredict[:,0])
     print('Test Score: %.2f MPAE' % (MPAE_Score))
 
-    print('This is jenkins integration')
+    print('This is jenkins integration!!!')
