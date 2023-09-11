@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    stages {
+        stage('Data_preparetions') {
+            steps {
+                // Get some code from a GitHub repository
+                git url: 'https://github.com/shuher237/MLOps.git', branch: 'main'
+                // Change to lab2 directory
+                sh "cd lab2"
+                //
+                sh "python3 ./lab2/data_creation.py"
+                sh "python3 ./lab2/data_preprocessing.py"
+            }
+        }
+        stage('Model_preparetion') {
+            steps{
+                
+                sh "python3 ./lab2/model_preparation.py"
+            }
+        }
+        stage('Model_testing') {
+            steps{
+                
+            sh "python3 ./lab2/model_testing.py"
+                
+            }
+        }
+    }
+}

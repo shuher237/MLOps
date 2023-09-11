@@ -1,0 +1,267 @@
+Started by GitHub push by shuher237
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /home/alex/.jenkins/workspace/lab2_pipe
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Data_preparetions)
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /home/alex/.jenkins/workspace/lab2_pipe/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/shuher237/MLOps.git # timeout=10
+Fetching upstream changes from https://github.com/shuher237/MLOps.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.25.1'
+ > git fetch --tags --force --progress -- https://github.com/shuher237/MLOps.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 183b61cd7a6ce534cbc2082228c72593f28d75f6 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 183b61cd7a6ce534cbc2082228c72593f28d75f6 # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D main # timeout=10
+ > git checkout -b main 183b61cd7a6ce534cbc2082228c72593f28d75f6 # timeout=10
+Commit message: "Update model_testing.py"
+ > git rev-list --no-walk b26f07862cfaa629c15318efa0033aa782b601a5 # timeout=10
+[Pipeline] sh
++ cd lab2
+[Pipeline] sh
++ python3 ./lab2/data_creation.py
+[Pipeline] sh
++ python3 ./lab2/data_preprocessing.py
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Model_preparetion)
+[Pipeline] sh
++ python3 ./lab2/model_preparation.py
+2023-09-12 01:58:09.948118: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2023-09-12 01:58:09.994751: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2023-09-12 01:58:09.995053: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-09-12 01:58:10.678761: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Epoch 1/100
+2553/2553 - 5s - loss: 0.0173 - 5s/epoch - 2ms/step
+Epoch 2/100
+2553/2553 - 4s - loss: 0.0109 - 4s/epoch - 1ms/step
+Epoch 3/100
+2553/2553 - 4s - loss: 0.0109 - 4s/epoch - 1ms/step
+Epoch 4/100
+2553/2553 - 4s - loss: 0.0108 - 4s/epoch - 1ms/step
+Epoch 5/100
+2553/2553 - 4s - loss: 0.0107 - 4s/epoch - 1ms/step
+Epoch 6/100
+2553/2553 - 4s - loss: 0.0107 - 4s/epoch - 1ms/step
+Epoch 7/100
+2553/2553 - 4s - loss: 0.0106 - 4s/epoch - 1ms/step
+Epoch 8/100
+2553/2553 - 5s - loss: 0.0106 - 5s/epoch - 2ms/step
+Epoch 9/100
+2553/2553 - 5s - loss: 0.0105 - 5s/epoch - 2ms/step
+Epoch 10/100
+2553/2553 - 3s - loss: 0.0105 - 3s/epoch - 1ms/step
+Epoch 11/100
+2553/2553 - 3s - loss: 0.0104 - 3s/epoch - 1ms/step
+Epoch 12/100
+2553/2553 - 4s - loss: 0.0104 - 4s/epoch - 2ms/step
+Epoch 13/100
+2553/2553 - 4s - loss: 0.0103 - 4s/epoch - 1ms/step
+Epoch 14/100
+2553/2553 - 4s - loss: 0.0103 - 4s/epoch - 1ms/step
+Epoch 15/100
+2553/2553 - 4s - loss: 0.0103 - 4s/epoch - 1ms/step
+Epoch 16/100
+2553/2553 - 4s - loss: 0.0103 - 4s/epoch - 1ms/step
+Epoch 17/100
+2553/2553 - 3s - loss: 0.0103 - 3s/epoch - 1ms/step
+Epoch 18/100
+2553/2553 - 4s - loss: 0.0102 - 4s/epoch - 1ms/step
+Epoch 19/100
+2553/2553 - 4s - loss: 0.0102 - 4s/epoch - 1ms/step
+Epoch 20/100
+2553/2553 - 3s - loss: 0.0102 - 3s/epoch - 1ms/step
+Epoch 21/100
+2553/2553 - 4s - loss: 0.0102 - 4s/epoch - 2ms/step
+Epoch 22/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 23/100
+2553/2553 - 4s - loss: 0.0102 - 4s/epoch - 1ms/step
+Epoch 24/100
+2553/2553 - 4s - loss: 0.0102 - 4s/epoch - 1ms/step
+Epoch 25/100
+2553/2553 - 4s - loss: 0.0102 - 4s/epoch - 1ms/step
+Epoch 26/100
+2553/2553 - 4s - loss: 0.0102 - 4s/epoch - 1ms/step
+Epoch 27/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 28/100
+2553/2553 - 3s - loss: 0.0101 - 3s/epoch - 1ms/step
+Epoch 29/100
+2553/2553 - 3s - loss: 0.0101 - 3s/epoch - 1ms/step
+Epoch 30/100
+2553/2553 - 3s - loss: 0.0101 - 3s/epoch - 1ms/step
+Epoch 31/100
+2553/2553 - 4s - loss: 0.0102 - 4s/epoch - 1ms/step
+Epoch 32/100
+2553/2553 - 3s - loss: 0.0101 - 3s/epoch - 1ms/step
+Epoch 33/100
+2553/2553 - 3s - loss: 0.0102 - 3s/epoch - 1ms/step
+Epoch 34/100
+2553/2553 - 3s - loss: 0.0102 - 3s/epoch - 1ms/step
+Epoch 35/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 36/100
+2553/2553 - 4s - loss: 0.0102 - 4s/epoch - 1ms/step
+Epoch 37/100
+2553/2553 - 4s - loss: 0.0102 - 4s/epoch - 1ms/step
+Epoch 38/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 39/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 40/100
+2553/2553 - 3s - loss: 0.0101 - 3s/epoch - 1ms/step
+Epoch 41/100
+2553/2553 - 3s - loss: 0.0101 - 3s/epoch - 1ms/step
+Epoch 42/100
+2553/2553 - 3s - loss: 0.0101 - 3s/epoch - 1ms/step
+Epoch 43/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 44/100
+2553/2553 - 4s - loss: 0.0102 - 4s/epoch - 2ms/step
+Epoch 45/100
+2553/2553 - 4s - loss: 0.0102 - 4s/epoch - 1ms/step
+Epoch 46/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 47/100
+2553/2553 - 4s - loss: 0.0102 - 4s/epoch - 2ms/step
+Epoch 48/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 2ms/step
+Epoch 49/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 50/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 51/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 52/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 53/100
+2553/2553 - 4s - loss: 0.0100 - 4s/epoch - 1ms/step
+Epoch 54/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 55/100
+2553/2553 - 4s - loss: 0.0102 - 4s/epoch - 1ms/step
+Epoch 56/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 2ms/step
+Epoch 57/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 58/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 59/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 60/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 2ms/step
+Epoch 61/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 2ms/step
+Epoch 62/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 63/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 64/100
+2553/2553 - 3s - loss: 0.0101 - 3s/epoch - 1ms/step
+Epoch 65/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 2ms/step
+Epoch 66/100
+2553/2553 - 5s - loss: 0.0101 - 5s/epoch - 2ms/step
+Epoch 67/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 68/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 69/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 70/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 71/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 72/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 73/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 74/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 75/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 76/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 77/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 78/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 79/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 80/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 81/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 82/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 83/100
+2553/2553 - 3s - loss: 0.0101 - 3s/epoch - 1ms/step
+Epoch 84/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 85/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 86/100
+2553/2553 - 3s - loss: 0.0101 - 3s/epoch - 1ms/step
+Epoch 87/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 88/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 89/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 90/100
+2553/2553 - 4s - loss: 0.0100 - 4s/epoch - 1ms/step
+Epoch 91/100
+2553/2553 - 4s - loss: 0.0100 - 4s/epoch - 1ms/step
+Epoch 92/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 93/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 94/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 95/100
+2553/2553 - 4s - loss: 0.0100 - 4s/epoch - 1ms/step
+Epoch 96/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 97/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 98/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 99/100
+2553/2553 - 4s - loss: 0.0101 - 4s/epoch - 1ms/step
+Epoch 100/100
+2553/2553 - 3s - loss: 0.0101 - 3s/epoch - 1ms/step
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Model_testing)
+[Pipeline] sh
++ python3 ./lab2/model_testing.py
+2023-09-12 02:04:20.740337: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2023-09-12 02:04:20.784210: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2023-09-12 02:04:20.784534: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-09-12 02:04:21.508660: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+ 1/35 [..............................] - ETA: 11s
+35/35 [==============================] - 0s 1ms/step
+Test Score: 3.41 RMSE
+Test Score: 2.62 MAE
+Test Score: 0.17 MPAE
+This is jenkins integration!!!
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
