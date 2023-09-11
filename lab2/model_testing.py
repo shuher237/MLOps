@@ -32,4 +32,3 @@ if __name__ == '__main__':
     print('Test Score: %.2f MPAE' % (MPAE_Score))
 
     print('This is jenkins integration!!!')
-    print('This is jenkins integration!!!')
