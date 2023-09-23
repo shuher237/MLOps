@@ -1,0 +1,61 @@
+  600  git version
+  601  pip3 install dvc
+  602  git init
+  603  dvc init
+  604  cd /home/alex/urfu_linux/mlops/labs/lab4
+  605  git init
+  606  dvc init
+  607  git commit -m "Init dvc"
+  608  git config --global user.email "sanyashuher237@mail.ru"
+  609  git config --global user.name "Alex"
+  610  git commit -m "Init dvc"
+  611  dvc add datasets
+  612  cat datasets.dvc
+  613  git status
+  614  git add .gitignore datasets.dvc
+  615  git commit -m "Put datasets under control"
+  616  dvc add remote "mydisk" gdrive://1TT1BwuV-cCdm9lG_mpWgxyG0IL5LWqYa
+  617  dvc remote  add "mydisk" gdrive://1TT1BwuV-cCdm9lG_mpWgxyG0IL5LWqYa
+  618  dvc remote list
+  619  git status
+  620  git add .dvc/config
+  621  git commit -m "Google disk was added as remote dataset folder"
+  622  dvc push -r mydisk
+  623  pip3 install dvc-gdrive
+  624  dvc push -r mydisk
+  625  pip3 install catboost.datasets
+  626  pip3 install catboost
+  627  python3 create_dataset.py
+  628  dvc add datasets
+  629  git status
+  630  git add create_dataset.py
+  631  git add datasets.dvc
+  632  git commit -m "Add a script that generates a dataset and create a dataset"
+  633  dvc push -r mydisk
+  634  python3 modify_dataset.py
+  635  dvc add datasets
+  636  git status
+  637  git add modify__dataset.py datasets.dvc
+  638  git add modify_dataset.py datasets.dvc
+  639  git commit -m "Add a script that modifies the dataset and rewrite the dataset"
+  640  dvc push -r mydisk
+  641  dvc add datasets
+  642  git status
+  643  git add fillna_df_age.py datasets.dvc
+  644  git commit -m "Create a new version of the dataset in which the missing values in the Age field are filled with the average value for the column"
+  645  dvc push -r mydisk
+  646  dvc add datasets
+  647  git status
+  648  git add one_hot_encoding.py datasets.dvc
+  649  git commit -m "Create a new attribute using one-hot-encoding"
+  650  dvc push -r mydisk
+  651  git log --oneline
+  652  git checkout 9b61c31
+  653  dvc pull -r mydisk
+  654  git log --oneline
+  655  git log
+  656  git checkout 0a848f1
+  657  git log
+  658  dvc pull -r mydisk
+  659  uname -r > logfile.txt
+  660  history > history.txt
